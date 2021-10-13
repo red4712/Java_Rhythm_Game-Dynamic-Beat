@@ -56,7 +56,7 @@ public class DynamicBeat extends JFrame {
 	private JButton backButton = new JButton(backButtonBasicImage);
 
 	
-	private Image background = new ImageIcon(Main.class.getResource("../images/intro_background.png")).getImage();
+	private Image background = new ImageIcon(Main.class.getResource("../images/mnu_background.png")).getImage();
 	
 	private int mouseX, mouseY;
 	private boolean isMainScreen = false;
@@ -74,8 +74,8 @@ public class DynamicBeat extends JFrame {
 	
 
 	public DynamicBeat() {
-		trackList.add(new Track("avengers_title.png", "avengers.png", "avengers_play.png", "The avengers Selected.mp3",
-				"Approaching Nirvana - The Avengers Theme Remix.mp3", "The Avengers Theme Remix"));
+		trackList.add(new Track("interstellar_title.png", "interstellar.png", "interstellar_play.png", "Interstellar Selected.mp3",
+				"Interstellar Official Soundtrack  First Step  Hans Zimmer  WaterTower.mp3", "Interstellar OST - First Step"));
 		trackList.add(
 				new Track("lunar_title.png", "ironman.png", "ironman_play.jpg", "Lunar Selected.mp3", "Lunar.mp3", "Lunar"));
 		
@@ -125,7 +125,7 @@ public class DynamicBeat extends JFrame {
 		});
 		add(quitButton);
 
-		// ½ÃÀÛ¹öÆ°
+		// ï¿½ï¿½ï¿½Û¹ï¿½Æ°
 		startButton.setBounds(25, 580, 400, 100);
 		startButton.setBorderPainted(false);
 		startButton.setContentAreaFilled(false);
@@ -153,7 +153,7 @@ public class DynamicBeat extends JFrame {
 		});
 		add(startButton);
 
-		// ³ª°¡±â ¹öÆ°
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 		exitButton.setBounds(450, 580, 400, 100);
 		exitButton.setBorderPainted(false);
 		exitButton.setContentAreaFilled(false);
@@ -186,7 +186,7 @@ public class DynamicBeat extends JFrame {
 		});
 		add(exitButton);
 
-		// ¿ÞÂÊ ¹öÆ°
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 		leftButton.setVisible(false);
 		leftButton.setBounds(150, 320, 60, 60);
 		leftButton.setBorderPainted(false);
@@ -327,7 +327,7 @@ public class DynamicBeat extends JFrame {
 		});
 		add(backButton);
 
-		// ÇÃ·¹ÀÌ¹öÆ°
+		// ï¿½Ã·ï¿½ï¿½Ì¹ï¿½Æ°
 		playButton.setVisible(false);
 		playButton.setBounds(610, 600, 60, 60);
 		playButton.setBorderPainted(false);
@@ -351,7 +351,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonEntered.mp3", false);
 				buttonEnteredMusic.start();
-				// ÇÃ·¹ÀÌ ¹öÆ° ÀÌº¥Æ®
+				// ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ®
 			}
 		});
 		add(playButton);

@@ -10,26 +10,51 @@ public class KeyListener extends KeyAdapter {
 		if (DynamicBeat.game == null) {
 			return;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			DynamicBeat.game.pressS();
+		if(Game.time < Game.changeTime) {
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				DynamicBeat.game.pressS();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				DynamicBeat.game.pressD();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_F) {
+				DynamicBeat.game.pressF();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				DynamicBeat.game.pressSpace();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_J) {
+				DynamicBeat.game.pressJ();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_K) {
+				DynamicBeat.game.pressK();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_L) {
+				DynamicBeat.game.pressL();
+			}
 		}
-		if (e.getKeyCode() == KeyEvent.VK_D) {
-			DynamicBeat.game.pressD();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_F) {
-			DynamicBeat.game.pressF();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			DynamicBeat.game.pressSpace();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_J) {
-			DynamicBeat.game.pressJ();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_K) {
-			DynamicBeat.game.pressK();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_L) {
-			DynamicBeat.game.pressL();
+		else {
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				DynamicBeat.game.pressS();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_E) {
+				DynamicBeat.game.pressD();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_R) {
+				DynamicBeat.game.pressF();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				DynamicBeat.game.pressSpace();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_U) {
+				DynamicBeat.game.pressJ();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_I) {
+				DynamicBeat.game.pressK();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_O) {
+				DynamicBeat.game.pressL();
+			}
 		}
 	}
 
@@ -38,26 +63,51 @@ public class KeyListener extends KeyAdapter {
 		if (DynamicBeat.game == null) {
 			return;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			DynamicBeat.game.releaseS();
+		if(Game.time < Game.changeTime) {
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				DynamicBeat.game.releaseS();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				DynamicBeat.game.releaseD();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_F) {
+				DynamicBeat.game.releaseF();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				DynamicBeat.game.releaseSpace();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_J) {
+				DynamicBeat.game.releaseJ();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_K) {
+				DynamicBeat.game.releaseK();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_L) {
+				DynamicBeat.game.releaseL();
+			}
 		}
-		if (e.getKeyCode() == KeyEvent.VK_D) {
-			DynamicBeat.game.releaseD();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_F) {
-			DynamicBeat.game.releaseF();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			DynamicBeat.game.releaseSpace();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_J) {
-			DynamicBeat.game.releaseJ();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_K) {
-			DynamicBeat.game.releaseK();
-		}
-		if (e.getKeyCode() == KeyEvent.VK_L) {
-			DynamicBeat.game.releaseL();
+		else {
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				DynamicBeat.game.releaseS();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_E) {
+				DynamicBeat.game.releaseD();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_R) {
+				DynamicBeat.game.releaseF();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				DynamicBeat.game.releaseSpace();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_U) {
+				DynamicBeat.game.releaseJ();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_I) {
+				DynamicBeat.game.releaseK();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_O) {
+				DynamicBeat.game.releaseL();
+			}
 		}
 	}
 

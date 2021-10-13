@@ -28,7 +28,8 @@ public class Game extends Thread {
 	private String difficulty;
 	private String musicTitle;
 	private Music gameMusic;
-
+	static public int time;
+	static public int changeTime = 1500;
 	ArrayList<Note> noteList = new ArrayList<Note>();
 
 	public Game(String titleName, String difficulty, String musicTitle) {
@@ -69,15 +70,26 @@ public class Game extends Thread {
 		g.drawString(difficulty, 1190, 702);
 		g.setFont(new Font("Arial", Font.PLAIN, 26));
 		g.setColor(Color.DARK_GRAY);
-		g.drawString("S", 270, 609);
-		g.drawString("D", 374, 609);
-		g.drawString("F", 478, 609);
-		g.drawString("SPACE BAR", 565, 609);
-		g.drawString("J", 784, 609);
-		g.drawString("K", 889, 609);
-		g.drawString("L", 993, 609);
+		if(Game.time < changeTime) {
+			g.drawString("S", 270, 609);
+			g.drawString("D", 374, 609);
+			g.drawString("F", 478, 609);
+			g.drawString("SPACE BAR", 565, 609);
+			g.drawString("J", 784, 609);
+			g.drawString("K", 889, 609);
+			g.drawString("L", 993, 609);
+		}
+		else {
+			g.drawString("W", 270, 609);
+			g.drawString("E", 374, 609);
+			g.drawString("R", 478, 609);
+			g.drawString("SPACE BAR", 565, 609);
+			g.drawString("U", 784, 609);
+			g.drawString("I", 889, 609);
+			g.drawString("O", 993, 609);
+		}
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
-		g.drawString("000000", 565, 702);
+		//g.drawString("000000", 565, 702);
 	}
 
 	public void pressS() {
@@ -158,12 +170,179 @@ public class Game extends Thread {
 	public void dropNotes() {
 		Beat[] beats = null;
 		int gap = 500;
-		if(titleName.equals("The Avengers Theme Remix")) {
+		if(titleName.equals("Interstellar OST - First Step")) {
 			int startTime = 1000 - Main.REACH_TIME * 1000;
 			beats = new Beat[] {
-					new Beat(startTime, "Space"),
-					new Beat(startTime + gap, "D"),
-					new Beat(startTime + gap * 3, "J")
+					new Beat(1000, "DF"),
+					new Beat(4000, "K"),
+					new Beat(4400, "J"),
+					new Beat(4750, "K"),
+					new Beat(5100, "J"),
+					new Beat(5450, "K"),
+					new Beat(5800, "J"),
+					new Beat(6150, "K"),
+					new Beat(6500, "J"),
+					new Beat(6850, "K"),
+					new Beat(7200, "J"),
+					new Beat(7550, "K"),
+					new Beat(7900, "J"),
+					new Beat(8450, "K"),
+					new Beat(8800, "J"),
+					new Beat(9150, "K"),
+					new Beat(9500, "J"),
+					new Beat(9850, "K"),
+					new Beat(10200, "J"),
+					new Beat(10550, "K"),
+					new Beat(10900, "J"),
+					new Beat(11250, "K"),
+					new Beat(11600, "J"),
+					new Beat(11950, "K"),
+					new Beat(12300, "J"),
+					new Beat(12650, "DKS"),
+					new Beat(13000, "J"),
+					new Beat(13350, "K"),
+					new Beat(13700, "J"),
+					new Beat(14050, "K"),
+					new Beat(14400, "J"),
+					new Beat(14750, "DKS"),
+					new Beat(15100, "J"),
+					new Beat(15450, "K"),
+					new Beat(15800, "J"),
+					new Beat(16150, "K"),
+					new Beat(17500, "J"),
+					new Beat(17850, "K"),
+					new Beat(18200, "J"),
+					new Beat(18550, "K"),
+					new Beat(18900, "J"),
+					new Beat(19250, "K"),
+					new Beat(19600, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					//350
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(20300, "J"),
+					new Beat(19950, "DKJS"),
+					new Beat(15100, "J"),
+					new Beat(15450, "K"),
+					new Beat(15800, "J"),
+					new Beat(16150, "K"),
+					new Beat(17500, "J"),
+					new Beat(19950, "DKS"),
+					new Beat(15100, "J"),
+					new Beat(15450, "K"),
+					new Beat(15800, "J"),
+					new Beat(16150, "K"),
+					new Beat(15100, "J"),
+					new Beat(15450, "K"),
+					new Beat(15800, "J"),
+					new Beat(16150, "K"),
+					new Beat(15100, "J"),
+					new Beat(15450, "K"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DFK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "K"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DFK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "K"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DFJK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DFJK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "AJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "ADJL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "AD"),
+					new Beat(15800, "ADJL"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JL"),
+					new Beat(15800, "K"),
+					new Beat(15800, "J"),
+					new Beat(15800, "K"),
+					new Beat(15800, "J"),
+					new Beat(15800, "ADJK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JKL"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "ADJK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "KL"),
+					new Beat(15800, "JKL"),
+					new Beat(15800, "J"),
+					new Beat(15800, "DK"),
+					new Beat(15800, "J"),
+					new Beat(15800, "ADKL"),
+					new Beat(15800, "J"),
+					new Beat(15800, "JKL"),
+					new Beat(15800, "J"),
+					new Beat(15800, "ADK"),
 			};
 		}
 		else if(titleName.equals("Lunar")) {
@@ -184,6 +363,7 @@ public class Game extends Thread {
 				noteList.add(note);
 				i++;
 				dropped = true;
+				time = beats[i].getTime();
 			}
 			if(!dropped) {
 				try {
