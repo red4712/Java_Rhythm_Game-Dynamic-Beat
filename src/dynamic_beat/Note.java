@@ -10,7 +10,20 @@ public class Note extends Thread {
 	private Image noteBasicImage = new ImageIcon(Main.class.getResource("../images/noteBasic.png")).getImage();
 	private int x, y = 580 - (1000 / Main.SLEEP_TIME * Main.NOTE_SPEED) * Main.REACH_TIME;
 	private String noteType;
+	private boolean proceeded = true;
 
+	public String getNoteType() {
+		return noteType;
+	}
+	
+	public boolean isProceeded() {
+		return proceeded;
+	}
+	
+	public void close() {
+		proceeded = false;
+	}
+	
 	public Note(String noteType) {
 		if(noteType.equals("S") || noteType.equals("SD") || noteType.equals("SJL") || 
 				noteType.equals("SDJL") || noteType.equals("SDJK") || noteType.equals("SDKL") || noteType.equals("SDK")) {
@@ -131,6 +144,10 @@ public class Note extends Thread {
 
 	public void drop() {
 		y += Main.NOTE_SPEED;
+		if(y > 620) {
+			System.out.println("Miss");
+			close();
+		}
 	}
 
 	@Override
@@ -138,10 +155,39 @@ public class Note extends Thread {
 		try {
 			while (true) {
 				drop();
-				Thread.sleep(Main.SLEEP_TIME);
+				if(proceeded) {
+					Thread.sleep(Main.SLEEP_TIME);
+				}
+				else {
+					interrupt();
+					break;
+				}
 			}
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
+	}
+	
+	public String judge() {
+		if(y >= 587) {
+			System.out.println("Good");
+			close();
+			return "Good";
+		}
+		else if(y >= 573) {
+			System.out.println("Perfect");
+			close();
+			return "Perfect";
+		}
+		else if(y >= 565) {
+			System.out.println("Good");
+			close();
+			return "Good";
+		}
+		return "None";
+	}
+	
+	public int getY() {
+		return y;
 	}
 }
