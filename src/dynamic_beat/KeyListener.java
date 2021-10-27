@@ -87,25 +87,25 @@ public class KeyListener extends KeyAdapter {
 			}
 		}
 		else {
-			if (e.getKeyCode() == KeyEvent.VK_W) {
+			if (e.getKeyCode() == KeyEvent.VK_W || Game.S == true) {
 				DynamicBeat.game.releaseS();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_E) {
+			if (e.getKeyCode() == KeyEvent.VK_E || Game.D == true) {
 				DynamicBeat.game.releaseD();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_R) {
+			if (e.getKeyCode() == KeyEvent.VK_R || Game.F == true) {
 				DynamicBeat.game.releaseF();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+			if (e.getKeyCode() == KeyEvent.VK_SPACE || Game.Space == true) {
 				DynamicBeat.game.releaseSpace();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_U) {
+			if (e.getKeyCode() == KeyEvent.VK_U || Game.J == true) {
 				DynamicBeat.game.releaseJ();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_I) {
+			if (e.getKeyCode() == KeyEvent.VK_I || Game.K == true) {
 				DynamicBeat.game.releaseK();
 			}
-			if (e.getKeyCode() == KeyEvent.VK_O) {
+			if (e.getKeyCode() == KeyEvent.VK_O || Game.L == true) {
 				DynamicBeat.game.releaseL();
 			}
 		}

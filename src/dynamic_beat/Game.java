@@ -29,7 +29,14 @@ public class Game extends Thread {
 	private String musicTitle;
 	private Music gameMusic;
 	static public int time;
-	static public int changeTime = 1500;
+	static public int changeTime = 12000;
+	static public boolean S = false;
+	static public boolean D = false;
+	static public boolean F = false;
+	static public boolean Space = false;
+	static public boolean J = false;
+	static public boolean K = false;
+	static public boolean L = false;
 	ArrayList<Note> noteList = new ArrayList<Note>();
 
 	public Game(String titleName, String difficulty, String musicTitle) {
@@ -68,10 +75,10 @@ public class Game extends Thread {
 		g.setFont(new Font("Arial", Font.BOLD, 30));
 		g.drawString(titleName, 20, 702);
 		g.drawString(difficulty, 1190, 702);
-		g.setFont(new Font("Arial", Font.PLAIN, 26));
-		g.setColor(Color.DARK_GRAY);
+		g.setFont(new Font("Arial", Font.BOLD, 26));	//Font.PLAIN
+		//g.setColor(Color.DARK_GRAY);
 		if(Game.time < changeTime) {
-			g.drawString("S", 270, 609);
+			g.drawString("S", 270, 609);// 270 609
 			g.drawString("D", 374, 609);
 			g.drawString("F", 478, 609);
 			g.drawString("SPACE BAR", 565, 609);
@@ -89,72 +96,86 @@ public class Game extends Thread {
 			g.drawString("O", 993, 609);
 		}
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
-		//g.drawString("000000", 565, 702);
+		//g.drawString("000000",e 565, 702);
 	}
 
 	public void pressS() {
 		noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		S = true;
 	}
 
 	public void releaseS() {
 		noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		S = false;
 	}
 
 	public void pressD() {
 		noteRouteDImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		D = true;
 	}
 
 	public void releaseD() {
 		noteRouteDImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		D = false;
 	}
 
 	public void pressF() {
 		noteRouteFImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		F = true;
 	}
 
 	public void releaseF() {
 		noteRouteFImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		D = false;
 	}
 
 	public void pressSpace() {
 		noteRouteSpaceImage1 = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		noteRouteSpaceImage2 = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		Space = true;
 	}
 
 	public void releaseSpace() {
 		noteRouteSpaceImage1 = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 		noteRouteSpaceImage2 = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		Space = false;
 	}
 
 	public void pressJ() {
 		noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		J = true;
 	}
 
 	public void releaseJ() {
 		noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		J = false;
 	}
 
 	public void pressK() {
 		noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		K = true;
 	}
 
 	public void releaseK() {
 		noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		K = false;
 	}
 
 	public void pressL() {
 		noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 		new Music("buttonEntered.mp3", false).start();
+		L = true;
 	}
 
 	public void releaseL() {
 		noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		L = false;
 	}
 
 	@Override
@@ -190,7 +211,7 @@ public class Game extends Thread {
 					new Beat(8800, "J"),
 					new Beat(9150, "K"),
 					new Beat(9500, "J"),
-					new Beat(9850, "K"),
+					new Beat(9850, "DJKS"),//K
 					new Beat(10200, "J"),
 					new Beat(10550, "K"),
 					new Beat(10900, "J"),
@@ -218,8 +239,9 @@ public class Game extends Thread {
 					new Beat(19600, "J"),
 					new Beat(19950, "DKS"),
 					new Beat(20300, "J"),
+					
 					//350
-					new Beat(19950, "DKS"),
+					/*new Beat(19950, "DKS"),
 					new Beat(20300, "J"),
 					new Beat(19950, "DKS"),
 					new Beat(20300, "J"),
@@ -236,7 +258,7 @@ public class Game extends Thread {
 					new Beat(16150, "K"),
 					new Beat(17500, "J"),
 					new Beat(19950, "DKS"),
-					new Beat(15100, "J"),
+					new Beat(20000, "J"),
 					new Beat(15450, "K"),
 					new Beat(15800, "J"),
 					new Beat(16150, "K"),
@@ -342,7 +364,7 @@ public class Game extends Thread {
 					new Beat(15800, "J"),
 					new Beat(15800, "JKL"),
 					new Beat(15800, "J"),
-					new Beat(15800, "ADK"),
+					new Beat(15800, "ADK")*/
 			};
 		}
 		else if(titleName.equals("Lunar")) {
@@ -364,6 +386,7 @@ public class Game extends Thread {
 				i++;
 				dropped = true;
 				time = beats[i].getTime();
+				System.out.println(time);
 			}
 			if(!dropped) {
 				try {

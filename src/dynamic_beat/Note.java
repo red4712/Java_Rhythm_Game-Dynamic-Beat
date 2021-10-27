@@ -17,7 +17,7 @@ public class Note extends Thread {
 			x = 228;
 		}
 		if(noteType.equals("D") || noteType.equals("DF") || noteType.equals("DK") ||noteType.equals("DKS") ||
-				noteType.equals("DKJS") || noteType.equals("DFK") || noteType.equals("DFJK")) {// D-S = 104
+				noteType.equals("DKJS") || noteType.equals("DFK") || noteType.equals("DFJK") || noteType.equals("DJKS")) {// D-S = 104
 			x = 332;
 		}
 		if(noteType.equals("F")) {
